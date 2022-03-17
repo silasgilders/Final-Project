@@ -39,7 +39,7 @@ def main():
     # Download today's APOD
     image_url = "https://api.nasa.gov/planetary/apod"
     image_msg = download_apod_image(image_url)
-    image_sha256 = sha256(image_url).hexdigest()
+    image_sha256 = sha256(image_url.encode()).hexdigest()
     image_size = -1 # TODO
     image_path = get_image_path(image_url, image_dir_path)
 
