@@ -37,7 +37,7 @@ def main():
     apod_info_dict = get_apod_info(apod_date)
     
     # Download today's APOD
-    image_url = "https://apod.nasa.gov/apod/astropix.html"
+    image_url = "https://api.nasa.gov/planetary/apod"
     image_msg = download_apod_image(image_url)
     image_sha256 = sha256(image_url).hexdigest()
     image_size = -1 # TODO
