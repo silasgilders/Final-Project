@@ -2,3 +2,4 @@ Final Project Log - Silas Gilders
 
 
 March 17th: Introduced to Final Project, did an initial run of the script to see what I have, added URL to image
+March 17th: Added very beginning of Hashing, need to make it print the hash of the image, not the URL itself
