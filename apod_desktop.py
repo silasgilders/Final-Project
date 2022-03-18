@@ -37,14 +37,14 @@ def main():
     apod_info_dict = get_apod_info(apod_date)
     
     # Download today's APOD
-    image_url = "https://api.nasa.gov/planetary/apod"
+    image_url = "https://apod.nasa.gov/apod/"
     image_msg = download_apod_image(image_url)
-    image_sha256 = sha256(image_url.encode()).hexdigest()
-    image_size = -1 # TODO
+    image_sha256 = sha256(image_msg.encode()).hexdigest()
+    image_size = -1 #TODO 
     image_path = get_image_path(image_url, image_dir_path)
 
     # Print APOD image information
-    print_apod_info(image_url, image_path, image_size, image_sha256)
+    print(image_url, "\n", image_path, "\n", image_size, "\n", image_sha256)
 
     # Add image to cache if not already present
     if not image_already_in_db(db_path, image_sha256):
