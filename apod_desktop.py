@@ -121,7 +121,7 @@ def get_apod_info(date):
     """    
 
     print("Getting APOD information.")
-    response = requests.get('https://api.nasa.gov/planetary/apod')
+    response = requests.get('https://api.nasa.gov/planetary/apod?api_key=ESzShDm6RHLrlXLPdKAINbmCgUtt9meX3KYiSlmD')
 
     if response.status_code == 200:
         print('Success')
