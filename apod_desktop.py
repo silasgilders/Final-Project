@@ -40,7 +40,7 @@ def main():
     apod_info_dict = get_apod_info(apod_date)
     
     # Download today's APOD
-    image_url = "https://apod.nasa.gov/apod/"
+    image_url = response["url"]
     image_msg = download_apod_image(image_url)
     image_sha256 = sha256(image_url.encode()).hexdigest()
     image_size = -1 #TODO 
@@ -138,6 +138,7 @@ params = {
   }
 response = requests.get(URL_APOD,params=params).json()
 pprint.pp(response)
+
         
         
     #return {"todo" : "TODO"}
