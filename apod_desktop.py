@@ -130,11 +130,12 @@ def get_apod_info(date):
   }
     response = requests.get(URL_APOD,params=params).json()
     pprint.pp(response)
-
-        
-        
-    return {"todo" : "TODO"}
-
+    
+    
+    
+    
+    return response
+    
 
 
 def print_apod_info(image_url, image_path, image_size, image_sha256):
