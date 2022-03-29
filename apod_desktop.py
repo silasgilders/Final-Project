@@ -131,14 +131,11 @@ def get_apod_info(date):
 URL_APOD = "https://api.nasa.gov/planetary/apod"
 api_key = "ESzShDm6RHLrlXLPdKAINbmCgUtt9meX3KYiSlmD"
 day = ''
-if len(argv) < 2:
-    date = day
-else:
-    date = argv[2]
+
 
 params = {
     'api_key':api_key,
-    'date': date,
+    'date': day,
     'hd':'True'
   }
 response = requests.get(URL_APOD,params=params).json()
