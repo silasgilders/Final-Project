@@ -40,7 +40,7 @@ def main():
     apod_info_dict = get_apod_info(apod_date)
     
     # Download today's APOD
-    image_url = response["url"]
+    image_url = "test"#response['url']
     image_msg = download_apod_image(image_url)
     image_sha256 = sha256(image_url.encode()).hexdigest()
     image_size = -1 #TODO 
@@ -120,30 +120,20 @@ def get_apod_info(date):
     :returns: Dictionary of APOD info
     """    
 
-    #print("Getting APOD information.")
-    #response = requests.get('https://api.nasa.gov/planetary/apod?api_key=ESzShDm6RHLrlXLPdKAINbmCgUtt9meX3KYiSlmD')
-
-    #if response.status_code == 200:
-        #print('Success')
-        #return response.json()
-    #else:
-        #print('Failed, Response code:', response.status_code)
-URL_APOD = "https://api.nasa.gov/planetary/apod"
-api_key = "ESzShDm6RHLrlXLPdKAINbmCgUtt9meX3KYiSlmD"
-day = ''
-
-
-params = {
-    'api_key':api_key,
-    'date': day,
-    'hd':'True'
+    URL_APOD = "https://api.nasa.gov/planetary/apod"
+    api_key = "ESzShDm6RHLrlXLPdKAINbmCgUtt9meX3KYiSlmD"
+    
+    params = {
+        'api_key':api_key,
+        'date': date,
+        'hd':'True'
   }
-response = requests.get(URL_APOD,params=params).json()
-pprint.pp(response)
+    response = requests.get(URL_APOD,params=params).json()
+    pprint.pp(response)
 
         
         
-    #return {"todo" : "TODO"}
+    return {"todo" : "TODO"}
 
 
 
