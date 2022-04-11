@@ -41,9 +41,9 @@ def main():
     apod_info_dict = get_apod_info(apod_date)
     
     # Download today's APOD
-    image_url = "whatever" #['url']
+    image_url = apod_info_dict
     image_msg = download_apod_image(image_url)
-    image_sha256 = sha256(image_url.encode()).hexdigest()
+    image_sha256 = sha256(image_msg.encode()).hexdigest()
     image_size = -1 #TODO 
     image_path = get_image_path(image_url, image_dir_path)
 
