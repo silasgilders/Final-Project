@@ -41,7 +41,7 @@ def main():
     apod_info_dict = get_apod_info(apod_date)
     
     # Download today's APOD
-    image_url = apod_info_dict
+    image_url = apod_info_dict['url']
     image_msg = download_apod_image(image_url)
     image_sha256 = sha256(image_msg.encode()).hexdigest()
     image_size = -1 #TODO 
@@ -134,7 +134,7 @@ def get_apod_info(date):
     
     if response.status_code == 200:
       print('success')
-      return response.json
+      return response.json()
     else:
       print('failed. Response code:', response.status_code)
     return response
