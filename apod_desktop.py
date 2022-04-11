@@ -22,6 +22,7 @@ from hashlib import sha256
 from os import path
 import sqlite3
 import pprint
+from urllib import response
 import requests
 
 def main():
@@ -40,7 +41,7 @@ def main():
     apod_info_dict = get_apod_info(apod_date)
     
     # Download today's APOD
-    image_url = "test"#response['url']
+    image_url = "whatever" #['url']
     image_msg = download_apod_image(image_url)
     image_sha256 = sha256(image_url.encode()).hexdigest()
     image_size = -1 #TODO 
@@ -128,13 +129,16 @@ def get_apod_info(date):
         'date': date,
         'hd':'True'
   }
-    response = requests.get(URL_APOD,params=params).json()
+    response = requests.get(URL_APOD,params=params)
     pprint.pp(response)
     
-    
-    
-    
+    if response.status_code == 200:
+      print('success')
+      return response.json
+    else:
+      print('failed. Response code:', response.status_code)
     return response
+    
     
 
 
