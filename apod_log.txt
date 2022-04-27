@@ -3,3 +3,11 @@ Final Project Log - Silas Gilders
 
 March 17th: Introduced to Final Project, did an initial run of the script to see what I have, added URL to image
 March 17th: Added very beginning of Hashing, need to make it print the hash of the image, not the URL itself
+March 18th: No strike! Still struggling away at this, unsure of the way I did hashing, and may have to check if the URl is correct
+cont: Script runs at least, output is not correct yet.
+March 26th: Took a long break, changed which Variable I get the hash from, to make it make more sense to me, posted question on-
+cont: Discussion forums, still waiting for an answer
+March 28th: Jeremy responded, working on what he advised to start with, ran into a roadblock and confusion, emailed Jeremy.
+March 29th: Had a minor breakdown :)
+April 11th: Made changes to how the Image URL variable works with the help of Jeremy, now works correctly.
+
